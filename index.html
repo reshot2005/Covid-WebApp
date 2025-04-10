@@ -4,17 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Offline COVID-19 Tracker</title>
+
+  <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Link to CSS in /frontend -->
+  <link rel="stylesheet" href="frontend/styles.css" />
+
+  <!-- Chart.js for graphs -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
   <!-- Top Right Navigation -->
   <div class="top-nav">
-    <a href="about.html">ABOUT</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="faq.html">FAQ</a>
+    <a href="frontend/about.html">ABOUT</a>
+    <a href="frontend/contact.html">CONTACT</a>
+    <a href="frontend/faqs.html">FAQ</a>
   </div>
 
   <!-- Main App Container -->
@@ -25,7 +31,7 @@
     <div class="input-group">
       <input type="text" id="countrySearch" placeholder="Search for a country..." />
       <button id="showGraphBtn">Graphs</button>
-      <button onclick="window.open('DataFrame.html', '_blank')">Dataframe</button>
+      <button onclick="window.open('frontend/DataFrame.html', '_blank')">Dataframe</button>
     </div>
 
     <!-- Graph Display -->
@@ -39,7 +45,10 @@
         <table id="dataTable">
           <thead>
             <tr>
-              Please Include First Letter in Caps
+              <th>Date</th>
+              <th>Confirmed</th>
+              <th>Recovered</th>
+              <th>Deaths</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -48,6 +57,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Link to JS in /frontend -->
+  <script src="frontend/script.js"></script>
 </body>
 </html>
