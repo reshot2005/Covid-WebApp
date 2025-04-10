@@ -17,7 +17,9 @@ This is an **offline-capable COVID-19 tracker web application** that displays hi
 - 🎨 Clean UI powered by custom CSS
 
 ---
+## 🌐 Live Demo
 
+🔗 [View Website ](https://covid-web-app-puce.vercel.app/)
 
 ---
 
@@ -29,7 +31,6 @@ This is an **offline-capable COVID-19 tracker web application** that displays hi
 git clone https://github.com/yourusername/Covid-WebApp.git
 cd Covid-WebApp
 ```
-
 ---
 
 ## 2. Prepare the JSON Data
@@ -47,3 +48,6 @@ You can now open index.html directly in your browser!
 
 ✅ No server or internet required after setup — works fully offline!
 
+## ✉ Contact
+### Created by Surya
+📫 reshotofficial01@gmail.com
