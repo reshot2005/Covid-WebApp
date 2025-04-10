@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Offline COVID-19 Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Top Right Navigation -->
+  <div class="top-nav">
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
+    <a href="#">FAQ</a>
+  </div>
+
+  <!-- Main App Container -->
+  <div class="tracker-container">
+    <h1>COVID-19 Tracker</h1>
+    <p class="subtext">Track offline COVID-19 data by country</p>
+
+    <div class="input-group">
+      <input type="text" id="countrySearch" placeholder="Search for a country..." />
+      <button id="showGraphBtn">Graphs</button>
+      <button onclick="window.open('DataFrame.html', '_blank')">Dataframe</button>
+    </div>
+
+    <!-- Graph Display -->
+    <div id="graphSection" class="hidden">
+      <canvas id="covidChart"></canvas>
+    </div>
+
+    <!-- Scrollable Table Display -->
+    <div id="dataSection" class="hidden">
+      <div class="table-container">
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Confirmed</th>
+              <th>Recovered</th>
+              <th>Deaths</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

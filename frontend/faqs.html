@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COVID-19 FAQs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #131528;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .search-bar {
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      padding: 14px;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .tabs span {
+      cursor: pointer;
+      color: #aaa;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 6px;
+    }
+
+    .tabs .active {
+      color: #ff4d4f;
+      border-color: #ff4d4f;
+    }
+
+    .faq {
+      background-color: #1c1f35;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 10px 0;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .faq h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .faq-answer {
+      display: none;
+      padding-top: 10px;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .faq.active .faq-answer {
+      display: block;
+    }
+  </style>
+</head>
+
+
+
+<div class="container">
+  <h1>Your Questions, Answered</h1>
+  <p>Here are frequently asked questions about the COVID-19 pandemic across the country and provinces.</p>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search a question..." onkeyup="searchFAQs()" />
+  </div>
+
+  <div class="tabs">
+    <span class="active">National</span>
+    <span>Provinces</span>
+  </div>
+
+  <div id="faqList">
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">What are the current national COVID-19 safety guidelines?</h3>
+      <div class="faq-answer">Guidelines include wearing masks indoors, maintaining social distancing, and regular hand hygiene.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">Are vaccines still effective against new COVID-19 variants?</h3>
+      <div class="faq-answer">Yes, updated vaccines are effective at reducing severe illness and hospitalizations from new variants.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">How can I get tested for COVID-19?</h3>
+      <div class="faq-answer">You can visit local health clinics, pharmacies, or mobile testing centers. Check your province's health website for locations.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">Is travel allowed between provinces?</h3>
+      <div class="faq-answer">Interprovincial travel is allowed, but restrictions may apply during outbreak surges in specific areas.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">What should I do if I test positive?</h3>
+      <div class="faq-answer">Isolate at home for at least 5 days, inform close contacts, and monitor symptoms. Seek medical help if symptoms worsen.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">Which provinces have the highest case numbers currently?</h3>
+      <div class="faq-answer">Case numbers vary; refer to the latest update on the COVID-19 dashboard for accurate province-level data.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">Are masks mandatory in schools?</h3>
+      <div class="faq-answer">Mask mandates depend on the province. Some regions have optional policies, others require masks indoors.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">How can I track COVID-19 trends in my province?</h3>
+      <div class="faq-answer">Use official government COVID-19 trackers or our interactive dashboard with map and graph views.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">What is the status of the vaccination drive?</h3>
+      <div class="faq-answer">Vaccination drives are ongoing nationwide, including booster campaigns targeting at-risk populations.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">Are there any restrictions for public gatherings?</h3>
+      <div class="faq-answer">Restrictions vary by region and case severity. Always check local health advisories before planning events.</div>
+    </div>
+    <div class="faq">
+      <h3 onclick="toggleAnswer(this)">Is COVID-19 testing still free?</h3>
+      <div class="faq-answer">Yes, in most provinces testing remains free at public facilities. Private centers may charge a fee.</div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function toggleAnswer(element) {
+    const faq = element.parentElement;
+    faq.classList.toggle("active");
+  }
+
+  function searchFAQs() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const faqs = document.querySelectorAll(".faq");
+
+    faqs.forEach(faq => {
+      const question = faq.querySelector("h3").textContent.toLowerCase();
+      faq.style.display = question.includes(input) ? "block" : "none";
+    });
+  }
+</script>
+
+</body>
+</html>
